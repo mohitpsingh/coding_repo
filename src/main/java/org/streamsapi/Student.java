@@ -1,6 +1,6 @@
 package org.streamsapi;
 
-public class Student {
+public class Student implements Comparable<Student>{
     private String firstName;
     private String lastName;
     private String emailAddress;
@@ -63,5 +63,22 @@ public class Student {
 
     public void setCourse(String course) {
         this.course = course;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", emailAddress='" + emailAddress + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", age=" + age +
+                ", course='" + course + '\'' +
+                '}';
+    }
+
+    @Override
+    public int compareTo(Student o) {
+        return this.age - o.age;
     }
 }
